@@ -274,7 +274,6 @@
             padding-bottom: 10px;
         }
 
-        /* Modal / Hidden PDF Viewer container that opens on mistake */
         #pdf-modal {
             display: none;
             position: fixed;
@@ -508,7 +507,7 @@
 
 <div class="game-container">
 
-    <!-- PDF POPUP MODAL (Appears only when a mistake is made) -->
+    <!-- PDF POPUP MODAL (Opens to the correct page on mistake) -->
     <div id="pdf-modal">
         <div class="pdf-modal-content">
             <div class="pdf-modal-header">
@@ -546,7 +545,7 @@
 
         <div class="welcome-msg">
             <h2>6th Grade English Practice Zone</h2>
-            <p>Get ready and test your skills before Wednesday's exam! Notebook lessons will open automatically if you need help on a question.</p>
+            <p>Get ready and test your skills before Wednesday's exam! Notebook lessons will open automatically to the exact page if you make a mistake.</p>
         </div>
 
         <form id="student-login-form" class="student-form" onsubmit="handleStudentStart(event)">
@@ -607,7 +606,7 @@
         <!-- Score Tracker -->
         <div class="score-box">
             <h3>Practice Score</h3>
-            <div class="score"><span id="current-score">0</span> / 20 pts</div>
+            <div class="score"><span id="current-score">0</span> / 30 pts</div>
         </div>
 
         <!-- Section Navigation Steps -->
@@ -630,28 +629,28 @@
             <div class="q-item">
                 <div class="q-text">1. Where are Leo and Sara meeting on Tuesday?</div>
                 <input type="text" class="typing-input" id="rq-1" placeholder="Type your short answer here...">
-                <button class="sub-btn" onclick="checkTextAns('rq-1', ['ict room'], 'They are meeting in the ICT room.', 1, 'Reading Comprehension Notes')">Check Answer</button>
+                <button class="sub-btn" onclick="checkTextAns('rq-1', ['ict room'], 'They are meeting in the ICT room.', 1, 'Reading Comprehension Notes', 3)">Check Answer</button>
                 <div class="feedback-box" id="rq-1-fb"></div>
             </div>
 
             <div class="q-item">
                 <div class="q-text">2. Why do they need a laptop and a textbook?</div>
                 <input type="text" class="typing-input" id="rq-2" placeholder="Type your short answer here...">
-                <button class="sub-btn" onclick="checkTextAns('rq-2', ['project', 'history'], 'They need them for their history project.', 1, 'Reading Comprehension Notes')">Check Answer</button>
+                <button class="sub-btn" onclick="checkTextAns('rq-2', ['project', 'history'], 'They need them for their history project.', 1, 'Reading Comprehension Notes', 3)">Check Answer</button>
                 <div class="feedback-box" id="rq-2-fb"></div>
             </div>
 
             <div class="q-item">
                 <div class="q-text">3. What test do they have on Wednesday?</div>
                 <input type="text" class="typing-input" id="rq-3" placeholder="Type your short answer here...">
-                <button class="sub-btn" onclick="checkTextAns('rq-3', ['math', 'mathematics'], 'They have a math test.', 1, 'Reading Comprehension Notes')">Check Answer</button>
+                <button class="sub-btn" onclick="checkTextAns('rq-3', ['math', 'mathematics'], 'They have a math test.', 1, 'Reading Comprehension Notes', 3)">Check Answer</button>
                 <div class="feedback-box" id="rq-3-fb"></div>
             </div>
 
             <div class="q-item">
                 <div class="q-text">4. Who types faster, Leo or Sara?</div>
                 <input type="text" class="typing-input" id="rq-4" placeholder="Type your short answer here...">
-                <button class="sub-btn" onclick="checkTextAns('rq-4', ['leo'], 'Leo types faster.', 1, 'Reading Comprehension & Comparative Adverbs Notes')">Check Answer</button>
+                <button class="sub-btn" onclick="checkTextAns('rq-4', ['leo'], 'Leo types faster.', 1, 'Comparative Adverbs Notes', 2)">Check Answer</button>
                 <div class="feedback-box" id="rq-4-fb"></div>
             </div>
 
@@ -666,43 +665,53 @@
             <h2 class="section-title">SECTION 2: Vocabulary & Online Steps</h2>
 
             <div class="q-item">
-                <div class="q-text">1. Students write an ________ for their English homework about their hobbies.[cite: 5]</div>
+                <div class="q-text">1. Students write an ________ for their English homework about their hobbies.</div>
                 <div class="options-grid">
-                    <button class="opt-btn" onclick="checkMcq(this, true, 1, 'Correct! Essays are written assignments.', 'Incorrect. Correct answer: essay.', 'Unit 1 - Lesson 2: Education Vocabulary')">a. essay</button>
-                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: essay.', 'Unit 1 - Lesson 2: Education Vocabulary')">b. timetable</button>
-                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: essay.', 'Unit 1 - Lesson 2: Education Vocabulary')">c. certificate</button>
+                    <button class="opt-btn" onclick="checkMcq(this, true, 1, 'Correct! Essays are written assignments.', 'Incorrect. Correct answer: essay.', 'Education Vocabulary Notes', 3)">a. essay</button>
+                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: essay.', 'Education Vocabulary Notes', 3)">b. timetable</button>
+                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: essay.', 'Education Vocabulary Notes', 3)">c. certificate</button>
                 </div>
                 <div class="feedback-box" id="fb-s2-1"></div>
             </div>
 
             <div class="q-item">
-                <div class="q-text">2. First step to use the school learning platform: Go online and ________.[cite: 10]</div>
+                <div class="q-text">2. Students do science experiments in the ________ to see what happens when liquids mix.</div>
                 <div class="options-grid">
-                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: Type in a password.', 'Platform Navigation & Sequencing Notes')">a. give up</button>
-                    <button class="opt-btn" onclick="checkMcq(this, true, 1, 'Correct! You type in a password to sign in.', 'Incorrect. Correct answer: Type in a password.', 'Platform Navigation & Sequencing Notes')">b. Type in a password</button>
-                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: Type in a password.', 'Platform Navigation & Sequencing Notes')">c. Win</button>
+                    <button class="opt-btn" onclick="checkMcq(this, true, 1, 'Correct! Science experiments happen in science labs.', 'Incorrect. Correct answer: science lab.', 'Education Vocabulary Notes', 3)">a. science lab</button>
+                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: science lab.', 'Education Vocabulary Notes', 3)">b. library</button>
+                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: science lab.', 'Education Vocabulary Notes', 3)">c. cafeteria</button>
                 </div>
                 <div class="feedback-box" id="fb-s2-2"></div>
             </div>
 
             <div class="q-item">
-                <div class="q-text">3. Next, ________ to open the vocabulary quiz icon.[cite: 10]</div>
+                <div class="q-text">3. First step to use the school learning platform: Go online and ________.</div>
                 <div class="options-grid">
-                    <button class="opt-btn" onclick="checkMcq(this, true, 1, 'Correct! Click on an icon to open games or links.', 'Incorrect. Correct answer: Click on an icon.', 'Platform Navigation & Sequencing Notes')">a. Click on an icon</button>
-                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: Click on an icon.', 'Platform Navigation & Sequencing Notes')">b. Download a document</button>
-                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: Click on an icon.', 'Platform Navigation & Sequencing Notes')">c. Search the internet</button>
+                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: Type in a password.', 'Platform Navigation Notes', 6)">a. give up</button>
+                    <button class="opt-btn" onclick="checkMcq(this, true, 1, 'Correct! You type in a password to sign in.', 'Incorrect. Correct answer: Type in a password.', 'Platform Navigation Notes', 6)">b. Type in a password</button>
+                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: Type in a password.', 'Platform Navigation Notes', 6)">c. Win</button>
                 </div>
                 <div class="feedback-box" id="fb-s2-3"></div>
             </div>
 
             <div class="q-item">
-                <div class="q-text">4. Finally, don't ________ if you lose a game. Try again![cite: 10]</div>
+                <div class="q-text">4. Next, ________ to open the vocabulary quiz icon.</div>
                 <div class="options-grid">
-                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: give up.', 'Platform Navigation & Sequencing Notes')">a. visit a website</button>
-                    <button class="opt-btn" onclick="checkMcq(this, true, 1, 'Correct! Never give up when practicing English.', 'Incorrect. Correct answer: give up.', 'Platform Navigation & Sequencing Notes')">b. give up</button>
-                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: give up.', 'Platform Navigation & Sequencing Notes')">c. sign in</button>
+                    <button class="opt-btn" onclick="checkMcq(this, true, 1, 'Correct! Click on an icon to open games or links.', 'Incorrect. Correct answer: Click on an icon.', 'Platform Navigation Notes', 6)">a. Click on an icon</button>
+                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: Click on an icon.', 'Platform Navigation Notes', 6)">b. Download a document</button>
+                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: Click on an icon.', 'Platform Navigation Notes', 6)">c. Search the internet</button>
                 </div>
                 <div class="feedback-box" id="fb-s2-4"></div>
+            </div>
+
+            <div class="q-item">
+                <div class="q-text">5. Finally, don't ________ if you lose a game. Try again!</div>
+                <div class="options-grid">
+                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: give up.', 'Platform Navigation Notes', 6)">a. visit a website</button>
+                    <button class="opt-btn" onclick="checkMcq(this, true, 1, 'Correct! Never give up when practicing English.', 'Incorrect. Correct answer: give up.', 'Platform Navigation Notes', 6)">b. give up</button>
+                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: give up.', 'Platform Navigation Notes', 6)">c. sign in</button>
+                </div>
+                <div class="feedback-box" id="fb-s2-5"></div>
             </div>
 
             <div class="nav-controls">
@@ -716,34 +725,51 @@
             <h2 class="section-title">SECTION 3: Grammar Practice</h2>
 
             <div class="q-item">
-                <div class="q-text">1. Present Simple: "Our English teacher ________ (check) our notebooks every Monday."[cite: 2]</div>
+                <div class="q-text">1. Present Simple: "Our English teacher ________ (check) our notebooks every Monday."</div>
                 <input type="text" class="typing-input" id="g-1" placeholder="Type correct verb form...">
-                <button class="sub-btn" onclick="checkTextAns('g-1', ['checks'], 'checks (3rd person singular takes -s)', 1, 'Unit 1 - Present Simple Rules')">Check Answer</button>
+                <button class="sub-btn" onclick="checkTextAns('g-1', ['checks'], 'checks (3rd person singular takes -s)', 1, 'Present Simple Rules', 1)">Check Answer</button>
                 <div class="feedback-box" id="g-1-fb"></div>
             </div>
 
             <div class="q-item">
-                <div class="q-text">2. Present Continuous Future: "We ________ (visit) the science lab tomorrow afternoon."[cite: 6]</div>
+                <div class="q-text">2. Present Simple Negative: "My brother ________ (not/cheat) when he plays online games."</div>
                 <input type="text" class="typing-input" id="g-2" placeholder="Type correct verb form...">
-                <button class="sub-btn" onclick="checkTextAns('g-2', ['are visiting'], 'are visiting (Subject + BE + verb-ing)', 1, 'Unit 1.3 - Present Continuous for Future Plans')">Check Answer</button>
+                <button class="sub-btn" onclick="checkTextAns('g-2', ['doesn\'t cheat', 'does not cheat', 'doesnt cheat'], 'doesn\'t cheat (he/she/it takes doesn\'t)', 1, 'Present Simple Rules', 1)">Check Answer</button>
                 <div class="feedback-box" id="g-2-fb"></div>
             </div>
 
             <div class="q-item">
-                <div class="q-text">3. Indefinite Pronouns: "I couldn't find my pencil case ________; I looked everywhere!"[cite: 7]</div>
-                <div class="options-grid">
-                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: anywhere.', 'Unit 1.5 - Indefinite Pronouns')">a. somewhere</button>
-                    <button class="opt-btn" onclick="checkMcq(this, true, 1, 'Correct! \'Anywhere\' is used in negative sentences for places.', 'Incorrect. Correct answer: anywhere.', 'Unit 1.5 - Indefinite Pronouns')">b. anywhere</button>
-                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: anywhere.', 'Unit 1.5 - Indefinite Pronouns')">c. nothing</button>
-                </div>
-                <div class="feedback-box" id="fb-s3-3"></div>
+                <div class="q-text">3. Present Continuous Future: "We ________ (visit) the science lab tomorrow afternoon."</div>
+                <input type="text" class="typing-input" id="g-3" placeholder="Type correct verb form...">
+                <button class="sub-btn" onclick="checkTextAns('g-3', ['are visiting'], 'are visiting (Subject + BE + verb-ing)', 1, 'Present Continuous for Future Plans', 4)">Check Answer</button>
+                <div class="feedback-box" id="g-3-fb"></div>
             </div>
 
             <div class="q-item">
-                <div class="q-text">4. Comparative Adverbs: "Sara finishes her test ________ (fast) than Omar."[cite: 3, 10]</div>
-                <input type="text" class="typing-input" id="g-4" placeholder="Type comparative adverb...">
-                <button class="sub-btn" onclick="checkTextAns('g-4', ['faster'], 'faster (short adverb + -er)', 1, 'Starter 1.2 - Comparative and Superlative Adverbs')">Check Answer</button>
-                <div class="feedback-box" id="g-4-fb"></div>
+                <div class="q-text">4. Indefinite Pronouns: "I couldn't find my pencil case ________; I looked everywhere!"</div>
+                <div class="options-grid">
+                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: anywhere.', 'Indefinite Pronouns Notes', 5)">a. somewhere</button>
+                    <button class="opt-btn" onclick="checkMcq(this, true, 1, 'Correct! \'Anywhere\' is used in negative sentences for places.', 'Incorrect. Correct answer: anywhere.', 'Indefinite Pronouns Notes', 5)">b. anywhere</button>
+                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: anywhere.', 'Indefinite Pronouns Notes', 5)">c. nothing</button>
+                </div>
+                <div class="feedback-box" id="fb-s3-4"></div>
+            </div>
+
+            <div class="q-item">
+                <div class="q-text">5. Comparative Adverbs: "Sara finishes her test ________ (fast) than Omar."</div>
+                <input type="text" class="typing-input" id="g-5" placeholder="Type comparative adverb...">
+                <button class="sub-btn" onclick="checkTextAns('g-5', ['faster'], 'faster (short adverb + -er)', 1, 'Comparative Adverbs Notes', 2)">Check Answer</button>
+                <div class="feedback-box" id="g-5-fb"></div>
+            </div>
+
+            <div class="q-item">
+                <div class="q-text">6. Indefinite Pronouns: "Is there ________ in the library right now?"</div>
+                <div class="options-grid">
+                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: anyone.', 'Indefinite Pronouns Notes', 5)">a. someone</button>
+                    <button class="opt-btn" onclick="checkMcq(this, true, 1, 'Correct! Anyone is used in questions.', 'Incorrect. Correct answer: anyone.', 'Indefinite Pronouns Notes', 5)">b. anyone</button>
+                    <button class="opt-btn" onclick="checkMcq(this, false, 0, '', 'Incorrect. Correct answer: anyone.', 'Indefinite Pronouns Notes', 5)">c. no one</button>
+                </div>
+                <div class="feedback-box" id="fb-s3-6"></div>
             </div>
 
             <div class="nav-controls">
@@ -758,9 +784,9 @@
             
             <div class="writing-prompt">
                 <strong>Task Prompt:</strong><br>
-                Write a short message (45-60 words) to a friend about your school week[cite: 10].<br>
-                Include: one usual activity, two planned activities, and a question inviting your friend[cite: 10].<br>
-                Use at least two sequencing expressions: <em>First, Then, Next, After that, Finally</em>[cite: 8, 10].
+                Write a short message (45-60 words) to a friend about your school week.<br>
+                Include: one usual activity, two planned activities, and a question inviting your friend.<br>
+                Use at least two sequencing expressions: <em>First, Then, Next, After that, Finally</em>.
             </div>
 
             <textarea id="writing-input" placeholder="Type your practice writing here using sequencing words..." oninput="countWords()"></textarea>
@@ -780,8 +806,8 @@
     let studentGroupData = "";
     let totalScore = 0;
     
-    // Put your corrected raw GitHub PDF link here
-    const pdfLessonUrl = "https://raw.githubusercontent.com/boudaryoussef99-bit/6th-Grades-Exam-Review-S1-EXam-1/main/Anglais%20-%20Toutes%20les%20le%C3%A7ons%20-%206%C3%A8me%20AP.pdf";
+    // Correct raw GitHub PDF link provided by you
+    const pdfBaseUrl = "https://raw.githubusercontent.com/boudaryoussef99-bit/6th-Grades-Exam-Review-S1-EXam-1/main/Anglais%20%E2%80%93%20Toutes%20les%20le%C3%A7ons%20-%206%C3%A8me%20AP.pdf.pdf";
 
     function handleStudentStart(event) {
         event.preventDefault();
@@ -797,8 +823,8 @@
         document.getElementById('app-screen').style.display = 'block';
     }
 
-    function openPdfModal() {
-        document.getElementById('pdf-iframe').src = pdfLessonUrl;
+    function openPdfModal(pageNumber) {
+        document.getElementById('pdf-iframe').src = pdfBaseUrl + "#page=" + pageNumber;
         document.getElementById('pdf-modal').style.display = 'flex';
     }
 
@@ -807,7 +833,7 @@
         document.getElementById('pdf-iframe').src = '';
     }
 
-    function checkMcq(btn, isCorrect, points, correctMsg, wrongMsg, lessonRef) {
+    function checkMcq(btn, isCorrect, points, correctMsg, wrongMsg, lessonRef, pageNum) {
         const parentGrid = btn.parentElement;
         const buttons = parentGrid.querySelectorAll('.opt-btn');
         const questionItem = parentGrid.closest('.q-item');
@@ -824,7 +850,7 @@
         } else {
             btn.classList.add('wrong');
             fbElem.className = 'feedback-box wrong';
-            fbElem.innerHTML = `<strong>[Not quite right! (0 pts)]</strong><br>${wrongMsg}<br><br><span style="font-size:0.85rem; color:#991b1b; font-weight:bold;">Covered in: ${lessonRef}</span><br><a class="view-lesson-link" onclick="openPdfModal()">View Notebook Lesson</a>`;
+            fbElem.innerHTML = `<strong>[Not quite right! (0 pts)]</strong><br>${wrongMsg}<br><br><span style="font-size:0.85rem; color:#991b1b; font-weight:bold;">Covered in: ${lessonRef}</span><br><a class="view-lesson-link" onclick="openPdfModal(${pageNum})">View Notebook Lesson (Page ${pageNum})</a>`;
             buttons.forEach(b => {
                 if (b.getAttribute('onclick').includes('true')) {
                     b.classList.add('correct');
@@ -834,7 +860,7 @@
         document.getElementById('current-score').innerText = totalScore;
     }
 
-    function checkTextAns(inputId, keywords, explanation, points, lessonRef) {
+    function checkTextAns(inputId, keywords, explanation, points, lessonRef, pageNum) {
         const inputElem = document.getElementById(inputId);
         const fbElem = document.getElementById(`${inputId}-fb`);
         const userText = inputElem.value.trim().toLowerCase();
@@ -856,7 +882,7 @@
             inputElem.disabled = true;
         } else {
             fbElem.className = 'feedback-box wrong';
-            fbElem.innerHTML = `<strong>[Incorrect.]</strong><br><em>Expected model answer: ${explanation}</em><br><br><span style="font-size:0.85rem; color:#991b1b; font-weight:bold;">Covered in: ${lessonRef}</span><br><a class="view-lesson-link" onclick="openPdfModal()">View Notebook Lesson</a>`;
+            fbElem.innerHTML = `<strong>[Incorrect.]</strong><br><em>Expected model answer: ${explanation}</em><br><br><span style="font-size:0.85rem; color:#991b1b; font-weight:bold;">Covered in: ${lessonRef}</span><br><a class="view-lesson-link" onclick="openPdfModal(${pageNum})">View Notebook Lesson (Page ${pageNum})</a>`;
             inputElem.disabled = true;
         }
         document.getElementById('current-score').innerText = totalScore;
@@ -886,7 +912,7 @@
         const writingText = document.getElementById('writing-input').value.trim();
         const statusDiv = document.getElementById('submission-status');
         
-        let finalScore = Math.min(20, totalScore);
+        let finalScore = Math.min(30, totalScore);
 
         statusDiv.style.display = 'block';
         statusDiv.style.color = 'var(--primary)';
@@ -897,7 +923,7 @@
         formData.append("subject", "6th Grade Practice Exam Results - " + studentNameData);
         formData.append("Full_Name", studentNameData);
         formData.append("Student_Group", studentGroupData);
-        formData.append("Total_Score", finalScore + " / 20");
+        formData.append("Total_Score", finalScore + " / 30");
         formData.append("Writing_Task_Answer", writingText || "No writing response provided");
 
         fetch("https://api.web3forms.com/submit", {
@@ -912,7 +938,7 @@
                     <h1 style="color: #2563eb; font-size: 2.5rem; margin-bottom: 15px;">Great Job, ${studentNameData}!</h1>
                     <p style="color: #475569; font-size: 1.4rem; margin-bottom: 25px;">You are fully prepared for Wednesday's exam!</p>
                     <div style="color: #16a34a; font-weight: bold; font-size: 1.1rem; background: #dcfce7; border: 1px solid #16a34a; padding: 12px 24px; border-radius: 12px;">
-                        Your practice score (${finalScore}/20) has been emailed to Mr. Youssef Boudar.
+                        Your practice score (${finalScore}/30) has been emailed to Mr. Youssef Boudar.
                     </div>
                 </div>
             `;
